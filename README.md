@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Kalakal — Frontend
 
-## Getting Started
+The frontend for Kalakal, a full-stack e-commerce application. Built with Next.js 16 and Tailwind CSS, consuming the Kalakal REST API.
 
-First, run the development server:
+## 🔗 Live
+
+**Frontend:** https://kalakal-core.vercel.app
+
+**Backend API:** https://ecommerce-api-a9nh.onrender.com
+
+**API Docs:** https://ecommerce-api-a9nh.onrender.com/api/docs/
+
+## ✨ Features
+
+- Browse products publicly — no login required
+- Product detail page with stock status
+- JWT authentication — register, login, logout
+- Cart management — add, update quantity, remove items
+- Atomic checkout — stock validation and order creation
+- Order history and order detail pages
+- Auth-aware navbar — shows different links based on login state
+
+## 📄 Pages
+
+| Page | URL | Auth |
+|------|-----|------|
+| Product List | `/` | Public |
+| Product Detail | `/products/[id]` | Public |
+| Register | `/register` | Public |
+| Login | `/login` | Public |
+| Cart | `/cart` | Required |
+| Orders | `/orders` | Required |
+| Order Detail | `/orders/[id]` | Required |
+
+## 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Next.js 16 | React framework with SSR |
+| TypeScript | Type safety |
+| Tailwind CSS | Styling |
+| Vercel | Deployment |
+
+## ⚙️ Setup (Local)
+
+```bash
+git clone https://github.com/Jkris0917/ecommerce-frontend
+cd ecommerce-frontend
+npm install
+```
+
+Create `.env.local`:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> Make sure the backend is running locally on port 8000, or point `NEXT_PUBLIC_API_URL` to the live API.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔗 Related
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Backend API:** [Kalakal API](https://github.com/Jkris0917/ecommerce-api)
+- **Monorepo:** [Kalakal Fullstack](https://github.com/Jkris0917/ecommerce-fullstack)
